@@ -1,3 +1,4 @@
+import 'package:e_commerece_store_app/app/modules/home_page/views/shared/widgets/tab_widget.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,7 +42,7 @@ class HomePageView extends GetView<HomePageController> {
                   ),
                   filled: true,
                   hintStyle:
-                      const TextStyle(color: AppColors.primaryLabelColor),
+                  const TextStyle(color: AppColors.primaryLabelColor),
                   hintText: "Search product",
                   prefixIcon: const Icon(
                     Icons.search_outlined,
@@ -55,17 +56,57 @@ class HomePageView extends GetView<HomePageController> {
       body: Center(
         child: Column(
           children: [
-            Text(
-              "Find your suitable product now.",
-              style: GoogleFonts.raleway(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 36),
+          Text(
+          "Find your suitable product now.",
+          style: GoogleFonts.raleway(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w700,
+              fontSize: 36),
+        ),
+            Obx(
+                    () {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TabWidget(
+                        onTap: (){
+                          controller.isSelected.value=1;
+                          print("${controller.isSelected.value}");
+                        },
+                        name: "Hand Bags",
+                        widthOfLine: 75.0,
+                        lineColor: controller.isSelected.value==1?AppColors.secondary:Colors.white,
+                        textColor: controller.isSelected.value==1?AppColors.secondary:AppColors.primaryLabelColor,
+                      ),
+                      TabWidget(
+                        onTap: ()=>controller.isSelected.value=2,
+                        name: "Watch",
+                        widthOfLine: 43.0,
+                        lineColor: controller.isSelected.value==2?AppColors.secondary:Colors.white,
+                        textColor: controller.isSelected.value==2?AppColors.secondary:AppColors.primaryLabelColor,
+                      ),
+                      TabWidget(
+                        onTap: ()=>controller.isSelected.value=3,
+                        name: "Books",
+                        widthOfLine: 45.0,
+                        lineColor: controller.isSelected.value==3?AppColors.secondary:Colors.white,
+                        textColor: controller.isSelected.value==3?AppColors.secondary:AppColors.primaryLabelColor,
+                      ),
+
+                      TabWidget(
+                        onTap: ()=>controller.isSelected.value=4,
+                        name: "Glasses",
+                        widthOfLine: 55.0,
+                        lineColor: controller.isSelected.value==4?AppColors.secondary:Colors.white,
+                        textColor: controller.isSelected.value==4?AppColors.secondary:AppColors.primaryLabelColor,
+                      ),
+                    ],
+                  );
+                }
             ),
 
-          ],
-        ),
+        ],
       ),
-    );
+    ),);
   }
 }
