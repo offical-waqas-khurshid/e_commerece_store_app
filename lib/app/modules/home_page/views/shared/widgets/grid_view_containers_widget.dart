@@ -20,7 +20,7 @@ class GridViewContainer extends StatelessWidget {
       child: Card(
         elevation: 5,
          child: Padding(
-           padding: const EdgeInsets.all(8.0),
+           padding: const EdgeInsets.only(top: 5, left: 10, right: 8, bottom: 5),
            child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
