@@ -13,6 +13,7 @@ class HomePageView extends GetView<HomePageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
