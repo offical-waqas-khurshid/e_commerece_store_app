@@ -1,3 +1,4 @@
+import 'package:e_commerece_store_app/app/modules/home_page/views/shared/SearchBarActionOfAppbar.dart';
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/grid_view_column.dart';
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/widgets/tab_widget.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
@@ -32,27 +33,8 @@ class HomePageView extends GetView<HomePageController> {
         elevation: 0,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: AppColors.primary),
-        actions: [
-          Container(
-            padding: const EdgeInsets.only(right: 20, top: 5),
-            width: 320,
-            height: 0,
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  filled: true,
-                  hintStyle:
-                      const TextStyle(color: AppColors.primaryLabelColor),
-                  hintText: "Search product",
-                  prefixIcon: const Icon(
-                    Icons.search_outlined,
-                    color: AppColors.primary,
-                  ),
-                  fillColor: Colors.white70),
-            ),
-          ),
+        actions: const [
+        searchbar_action_of_appbar(),
         ],
       ),
       body: SingleChildScrollView(
@@ -131,5 +113,7 @@ class HomePageView extends GetView<HomePageController> {
     );
   }
 }
+
+
 
 
