@@ -1,3 +1,4 @@
+import 'package:e_commerece_store_app/app/modules/home_page/views/shared/grid_view_column.dart';
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/widgets/tab_widget.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,9 @@ class HomePageView extends GetView<HomePageController> {
         iconTheme: const IconThemeData(color: AppColors.primary),
         actions: [
           Container(
-            width: 325,
-            height: 50,
+            padding: const EdgeInsets.only(right: 20, top: 5),
+            width: 320,
+            height: 0,
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -54,7 +56,10 @@ class HomePageView extends GetView<HomePageController> {
         ],
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(15),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          
           children: [
             Text(
               "Find your suitable product now.",
@@ -63,6 +68,7 @@ class HomePageView extends GetView<HomePageController> {
                   fontWeight: FontWeight.w700,
                   fontSize: 36),
             ),
+            const SizedBox(height: 28),
             Obx(() {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,30 +123,13 @@ class HomePageView extends GetView<HomePageController> {
                 ],
               );
             }),
-            Column(
-              children: [
-                Container(
-                  height: 500,
-                  width: 500,
-                  child: GridView.extent(
-                    primary: false,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
-                    maxCrossAxisExtent: 300.0,
-                    children: <Widget>[
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        color: Colors.yellow,
-                        child: Image.asset(""),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            const SizedBox(height: 28),
+           const GridViewColumn(),
           ],
         ),
       ),
     );
   }
 }
+
+
