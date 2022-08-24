@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/detail_page/bindings/detail_page_binding.dart';
+import '../modules/detail_page/views/detail_page_view.dart';
 import '../modules/home_page/bindings/home_page_binding.dart';
 import '../modules/home_page/views/home_page_view.dart';
 
@@ -15,6 +17,11 @@ class AppPages {
       name: _Paths.HOME_PAGE,
       page: () => const HomePageView(),
       binding: HomePageBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_PAGE,
+      page: () => const DetailPageView(),
+      binding: DetailPageBinding(),
     ),
   ];
 }
