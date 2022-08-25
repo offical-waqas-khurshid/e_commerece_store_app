@@ -89,15 +89,53 @@ class DetailPageView extends GetView<DetailPageController> {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        colors_container_details_view(name: 'Check Pink', onTap: (){ controller.isSelected.value = 1;}),
-                        colors_container_details_view(name: 'Royal Gray',onTap: (){ controller.isSelected.value = 1;}),
-                        colors_container_details_view(name: 'Royal Gray',onTap: (){ controller.isSelected.value = 1;}),
-                      ],
+                    Obx(
+                      () {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            colors_container_details_view(
+                              onTap: (){
+                                controller.isSelected.value = 1;
+                                print(controller.isSelected.value);
+                                },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor1,
+                              borderColor: controller.isSelected.value == 1
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 1 ? AppColors.primary: AppColors.borderColor,
+                            ),
+                            colors_container_details_view(
+                              onTap: (){
+                                controller.isSelected.value = 2;
+                                print(controller.isSelected.value);
+                              },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor2,
+                              borderColor: controller.isSelected.value == 2
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 2 ? AppColors.primary: AppColors.borderColor,
+                            ),
+                            colors_container_details_view(
+                              onTap: (){
+                                controller.isSelected.value = 3;
+                                print(controller.isSelected.value);
+                              },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor3,
+                              borderColor: controller.isSelected.value == 3
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 3 ? AppColors.primary: AppColors.borderColor,
+                            ),
+                          ],
+                        );
+                      }
                     ),
+
                   ],
                 ),
               ),
@@ -108,5 +146,3 @@ class DetailPageView extends GetView<DetailPageController> {
     );
   }
 }
-
-
