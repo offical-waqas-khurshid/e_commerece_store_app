@@ -4,6 +4,7 @@ class DetailPageController extends GetxController {
   //TODO: Implement DetailPageController
 
   final count = 0.obs;
+  final isSelected = 1.obs;
   @override
   void onInit() {
     super.onInit();

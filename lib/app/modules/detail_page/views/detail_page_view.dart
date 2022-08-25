@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/detail_page_controller.dart';
+import 'shared/widgets/colors_container_details_view.dart';
 
 class DetailPageView extends GetView<DetailPageController> {
   const DetailPageView({Key? key}) : super(key: key);
@@ -34,33 +35,67 @@ class DetailPageView extends GetView<DetailPageController> {
               ),
               Container(
                 height: 423,
-                width: 375,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                width: 390,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20.0),
+                      topLeft: Radius.circular(20.0)),
+                  color: Colors.white,
+                ),
+                child: Column(
                   children: [
-                    Column(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Mulberry Clutch',
-                          style: GoogleFonts.raleway(
-                              color: AppColors.primary,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20),
+                        Column(
+                          children: [
+                            Text(
+                              'Mulberry Clutch',
+                              style: GoogleFonts.raleway(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 20),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              '( With solo loop )',
+                              style: GoogleFonts.raleway(
+                                  color: AppColors.primaryLabelColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16),
+                            ),
+                          ],
                         ),
-                       const SizedBox(height: 5,),
-                        Text('( With solo loop )',style: GoogleFonts.raleway(
-                            color: AppColors.primaryLabelColor,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16),),
+                        Text(
+                          '\$799',
+                          style: GoogleFonts.poppins(
+                              color: AppColors.secondary,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 24),
+                        ),
                       ],
                     ),
-                    Column(
+                    Row(
                       children: [
-                        Text('\$799',style: GoogleFonts.poppins(
-                            color: AppColors.secondary,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 24),),
+                        Text(
+                          'Colors',
+                          style: GoogleFonts.raleway(
+                              color: AppColors.primary,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        colors_container_details_view(name: 'Check Pink', onTap: (){ controller.isSelected.value = 1;}),
+                        colors_container_details_view(name: 'Royal Gray',onTap: (){ controller.isSelected.value = 1;}),
+                        colors_container_details_view(name: 'Royal Gray',onTap: (){ controller.isSelected.value = 1;}),
                       ],
                     ),
                   ],
@@ -73,3 +108,5 @@ class DetailPageView extends GetView<DetailPageController> {
     );
   }
 }
+
+
