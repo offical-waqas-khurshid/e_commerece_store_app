@@ -32,8 +32,8 @@ class HomePageView extends GetView<HomePageController> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: AppColors.primary),
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: const [
         searchbar_action_of_appbar(),
         ],
