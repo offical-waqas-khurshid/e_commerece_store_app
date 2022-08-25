@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/detail_page_controller.dart';
+import 'shared/widgets/DetailRowTabs.dart';
 import 'shared/widgets/colors_container_details_view.dart';
 
 class DetailPageView extends GetView<DetailPageController> {
@@ -105,7 +106,7 @@ class DetailPageView extends GetView<DetailPageController> {
                               borderColor: controller.isSelected.value == 1
                                   ? AppColors.primaryLabelColor
                                   : AppColors.borderColor,
-                              textColor: controller.isSelected.value == 1 ? AppColors.primary: AppColors.borderColor,
+                              textColor: controller.isSelected.value == 1 ? AppColors.primary: AppColors.primaryLabelColor,
                             ),
                             colors_container_details_view(
                               onTap: (){
@@ -117,7 +118,7 @@ class DetailPageView extends GetView<DetailPageController> {
                               borderColor: controller.isSelected.value == 2
                                   ? AppColors.primaryLabelColor
                                   : AppColors.borderColor,
-                              textColor: controller.isSelected.value == 2 ? AppColors.primary: AppColors.borderColor,
+                              textColor: controller.isSelected.value == 2 ? AppColors.primary: AppColors.primaryLabelColor,
                             ),
                             colors_container_details_view(
                               onTap: (){
@@ -129,12 +130,42 @@ class DetailPageView extends GetView<DetailPageController> {
                               borderColor: controller.isSelected.value == 3
                                   ? AppColors.primaryLabelColor
                                   : AppColors.borderColor,
-                              textColor: controller.isSelected.value == 3 ? AppColors.primary: AppColors.borderColor,
+                              textColor: controller.isSelected.value == 3 ? AppColors.primary: AppColors.primaryLabelColor,
                             ),
                           ],
                         );
                       }
                     ),
+                  const SizedBox(height: 30,),
+                   Obx(
+                     () {
+                       return Row(
+                         children: [
+                           DetailRowTabs(
+                             onTap: (){
+                               controller.isSelectedReviews.value = 1;
+                             },
+                             title: 'Details',
+                             lineHeight: 3,
+                             lineWidth: 40,
+                             textColor: controller.isSelectedReviews.value == 1 ? AppColors.secondary:AppColors.primaryLabelColor,
+                             lineColor: controller.isSelectedReviews.value == 1 ? AppColors.secondary:Colors.white,
+                           ),
+                          const SizedBox(width: 20,),
+                           DetailRowTabs(
+                             onTap: (){
+                               controller.isSelectedReviews.value = 2;
+                             },
+                             title: 'Reviews',
+                             lineHeight: 3,
+                             lineWidth: 50,
+                             textColor: controller.isSelectedReviews.value == 2 ? AppColors.secondary:AppColors.primaryLabelColor,
+                             lineColor: controller.isSelectedReviews.value == 2 ? AppColors.secondary:Colors.white,
+                           ),
+                         ],
+                       );
+                     }
+                   ),
 
                   ],
                 ),
@@ -146,3 +177,5 @@ class DetailPageView extends GetView<DetailPageController> {
     );
   }
 }
+
+

@@ -5,6 +5,7 @@ class DetailPageController extends GetxController {
 
   final count = 0.obs;
   final isSelected = 1.obs;
+  final isSelectedReviews = 1.obs;
   @override
   void onInit() {
     super.onInit();
