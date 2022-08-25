@@ -1,5 +1,4 @@
 import 'package:e_commerece_store_app/app/modules/detail_page/controllers/detail_page_controller.dart';
-import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

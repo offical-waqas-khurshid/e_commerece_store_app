@@ -4,10 +4,8 @@ import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/Produ
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/StackDetailPage.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../controllers/detail_page_controller.dart';
 import 'shared/widgets/DetailRowTabs.dart';
 import 'shared/widgets/colors_container_details_view.dart';
