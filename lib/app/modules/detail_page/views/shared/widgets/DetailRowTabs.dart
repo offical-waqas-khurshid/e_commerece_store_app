@@ -22,7 +22,7 @@ class DetailRowTabs extends GetView<DetailPageController> {
                 onTap: onTap,
                 child: Column(
                   children: [
-                    Text('$title'),
+                    Text('$title', style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
                     Container( height: lineHeight, width: lineWidth, color: lineColor,),
                   ],
                 ),
