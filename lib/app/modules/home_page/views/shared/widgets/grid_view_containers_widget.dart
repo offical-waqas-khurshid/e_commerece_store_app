@@ -7,8 +7,9 @@ class GridViewContainer extends StatelessWidget {
   final String? title;
   final String? subtitle;
   final double? price;
+  Function()? onTap;
 
-  const GridViewContainer({this.image, this.title, this.subtitle, this.price});
+  GridViewContainer({this.image, this.title, this.subtitle, this.price, this.onTap});
   
 
   @override
@@ -17,37 +18,40 @@ class GridViewContainer extends StatelessWidget {
       height: 500,
       width: 157,
       color: Colors.white,
-      child: Card(
-        elevation: 5,
-         child: Padding(
-           padding: const EdgeInsets.only(top: 5, left: 10, right: 8, bottom: 5),
-           child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-               children: [
-                 Image.asset(
-                '$image',
-                   height: 110,
-                   width: 160,
-              ),
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          elevation: 5,
+           child: Padding(
+             padding: const EdgeInsets.only(top: 5, left: 10, right: 8, bottom: 5),
+             child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 children: [
+                   Image.asset(
+                  '$image',
+                     height: 110,
+                     width: 160,
+                ),
 
-              Text('$title',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600, fontSize: 16)),
-              Text('$subtitle',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                      color: AppColors.primaryLabelColor)),
-              Text('\$$price',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: AppColors.secondary)),
-            ],
-        ),
-         ),
-        ),
+                Text('$title',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600, fontSize: 16)),
+                Text('$subtitle',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: AppColors.primaryLabelColor)),
+                Text('\$$price',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppColors.secondary)),
+              ],
+          ),
+           ),
+          ),
+      ),
     );
   }
 }

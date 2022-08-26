@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../routes/app_pages.dart';
 import 'widgets/grid_view_containers_widget.dart';
 
 class GridViewColumn extends StatelessWidget {
@@ -20,8 +23,9 @@ class GridViewColumn extends StatelessWidget {
             mainAxisSpacing: 10,
             childAspectRatio: 1.0/1.4,
             maxCrossAxisExtent: 200.0,
-            children: const <Widget>[
+            children:  <Widget>[
               GridViewContainer(
+                onTap: () => Get.toNamed(Routes.DETAIL_PAGE, arguments: 'detail page'),
                 image: "assets/images/whit_bag.png",
                 title: 'Mulberry Clutch',
                 subtitle: 'Series 7',

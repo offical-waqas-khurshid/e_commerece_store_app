@@ -61,7 +61,6 @@ class HomePageView extends GetView<HomePageController> {
                   TabWidget(
                     onTap: () {
                       controller.isSelected.value = 1;
-                      print("${controller.isSelected.value}");
                     },
                     name: "Hand Bags",
                     widthOfLine: 75.0,
