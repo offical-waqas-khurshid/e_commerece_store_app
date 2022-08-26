@@ -3,6 +3,7 @@ import 'package:e_commerece_store_app/app/modules/home_page/views/shared/grid_vi
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/widgets/tab_widget.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/home_page_controller.dart';
@@ -12,6 +13,8 @@ class HomePageView extends GetView<HomePageController> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: Drawer(
@@ -32,17 +35,16 @@ class HomePageView extends GetView<HomePageController> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.secondary,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: const [
-        searchbar_action_of_appbar(),
+          searchbar_action_of_appbar(),
         ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          
           children: [
             Text(
               "Find your suitable product now.",
@@ -107,14 +109,10 @@ class HomePageView extends GetView<HomePageController> {
               );
             }),
             const SizedBox(height: 28),
-           const GridViewColumn(),
+            const GridViewColumn(),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-

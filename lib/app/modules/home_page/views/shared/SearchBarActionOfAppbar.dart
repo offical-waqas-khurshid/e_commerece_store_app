@@ -1,4 +1,4 @@
-import 'package:e_commerece_store_app/app/utils/appColors.dart';
+
 import 'package:flutter/material.dart';
 
 class searchbar_action_of_appbar extends StatelessWidget {
@@ -16,14 +16,15 @@ class searchbar_action_of_appbar extends StatelessWidget {
         decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25.0),
+
             ),
             filled: true,
             hintStyle:
-            const TextStyle(color: AppColors.primaryLabelColor),
+            const TextStyle(color: Colors.white),
             hintText: "Search product",
             prefixIcon: const Icon(
               Icons.search_outlined,
-              color: AppColors.primary,
+              color: Colors.white,
             ),
             fillColor: Colors.white70),
       ),

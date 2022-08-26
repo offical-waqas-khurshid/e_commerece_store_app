@@ -4,6 +4,7 @@ import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/Produ
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/StackDetailPage.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/detail_page_controller.dart';
@@ -15,6 +16,8 @@ class DetailPageView extends GetView<DetailPageController> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
       body: SafeArea(
         child: Center(
