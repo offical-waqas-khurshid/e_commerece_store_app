@@ -9,7 +9,7 @@ class searchbar_action_of_appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(right: 20, top: 5),
+      padding: const EdgeInsets.only(right: 20, top: 5, bottom: 5),
       width: 320,
       height: 0,
       child: TextField(
