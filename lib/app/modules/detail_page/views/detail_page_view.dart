@@ -23,7 +23,7 @@ class DetailPageView extends GetView<DetailPageController> {
         child: Center(
           child: Column(
             children: [
-              const StackDetailPage(children: [],),
+              StackDetailPage(),
               Container(
                 padding: const EdgeInsets.all(20),
                 height: 423,
