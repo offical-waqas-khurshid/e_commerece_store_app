@@ -1,5 +1,6 @@
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailRowContainer extends StatelessWidget {
@@ -9,6 +10,7 @@ class DetailRowContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var firstDemo = Get.arguments;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -16,7 +18,7 @@ class DetailRowContainer extends StatelessWidget {
         Column(
           children: [
             Text(
-              'Mulberry Clutch',
+              '${firstDemo[0]}',
               style: GoogleFonts.raleway(
                   color: AppColors.primary,
                   fontWeight: FontWeight.w700,
@@ -26,7 +28,7 @@ class DetailRowContainer extends StatelessWidget {
               height: 5,
             ),
             Text(
-              '( With solo loop )',
+              '${firstDemo[1]}',
               style: GoogleFonts.raleway(
                   color: AppColors.primaryLabelColor,
                   fontWeight: FontWeight.w500,
@@ -37,7 +39,7 @@ class DetailRowContainer extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Text(
-            '\$799',
+            '\$${firstDemo[2]}',
             style: GoogleFonts.poppins(
                 color: AppColors.secondary,
                 fontWeight: FontWeight.w500,
