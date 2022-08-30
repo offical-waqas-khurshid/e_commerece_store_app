@@ -1,23 +1,19 @@
+import 'dart:async';
+
+import 'package:e_commerece_store_app/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashScreenController extends GetxController {
   //TODO: Implement SplashScreenController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
   @override
   void onReady() {
     super.onReady();
+    loading();
   }
-
-  @override
-  void onClose() {
-    super.onClose();
+  Future<void> loading() async {
+    Timer(const Duration(seconds: 5),(){
+      Get.offAllNamed(Routes.HOME_PAGE);
+    });
   }
-
-  void increment() => count.value++;
 }
