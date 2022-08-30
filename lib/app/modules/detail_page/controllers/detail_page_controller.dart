@@ -4,11 +4,15 @@ class DetailPageController extends GetxController {
   //TODO: Implement DetailPageController
 
   final count = 0.obs;
+  final image = "".obs;
   final isSelected = 1.obs;
   final isSelectedReviews = 1.obs;
   @override
   void onInit() {
     super.onInit();
+    Map<String,dynamic> data = Get.parameters;
+    image.value = data["id"];
+
   }
 
   @override

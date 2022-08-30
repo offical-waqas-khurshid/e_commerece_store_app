@@ -1,11 +1,11 @@
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/SearchBarActionOfAppbar.dart';
-import 'package:e_commerece_store_app/app/modules/home_page/views/shared/grid_view_column.dart';
 import 'package:e_commerece_store_app/app/modules/home_page/views/shared/widgets/tab_widget.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/home_page_controller.dart';
 
 class HomePageView extends GetView<HomePageController> {
@@ -108,10 +108,74 @@ class HomePageView extends GetView<HomePageController> {
               );
             }),
             const SizedBox(height: 28),
-            const GridViewColumn(),
+             GridViewColumn1(),
           ],
         ),
       ),
     );
+  }
+}
+
+class GridViewColumn1 extends GetView<HomePageController> {
+
+  GridViewColumn1({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+  return Container(
+    height: 800,
+    child: GridView.builder(
+      itemCount: controller.images.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 1.0 / 1.4, crossAxisCount: 2,
+
+        ),
+        itemBuilder: (context, index){
+          return Container(
+            height: 500,
+            width: 157,
+            color: Colors.white,
+            child: InkWell(
+              onTap: (){
+                print("$index");
+                Get.toNamed(Routes.DETAIL_PAGE,parameters: {"id": controller.images[index]});
+              },
+              child: Card(
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 10, right: 8, bottom: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        controller.images[index],
+                        height: 110,
+                        width: 160,
+                      ),
+
+                      Text('$index',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600, fontSize: 16)),
+                      Text('subtitle',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              color: AppColors.primaryLabelColor)),
+                      Text('\$price',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: AppColors.secondary)),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        }),
+  );
   }
 }
