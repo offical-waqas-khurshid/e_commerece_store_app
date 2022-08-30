@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../controllers/detail_page_controller.dart';
 
 class StackDetailPage extends GetView<DetailPageController> {

@@ -1,5 +1,4 @@
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/DetailBtnSizeBox.dart';
-import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/DetailRowContainer.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/ProductDetailContainer.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/StackDetailPage.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
@@ -38,8 +37,37 @@ class DetailPageView extends GetView<DetailPageController> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: 300,
+                      Obx(
+                         () {
+                          return Container(
+                            width: 300,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:  [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(controller.title.value,  style: GoogleFonts.raleway(
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20),),
+                                   const SizedBox(height: 10,),
+                                    Text(controller.subTitle.value, style: GoogleFonts.raleway(
+                                        color: AppColors.primary,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14),),
+                                  ],
+                                ),
+                                Text("\$${controller.price.value}", style: GoogleFonts.raleway(
+                                    color: AppColors.secondary,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 26),),
+                              ],
+                            ),
+                          );
+                        }
                       ),
                      const SizedBox(height: 10,),
                       Row(
