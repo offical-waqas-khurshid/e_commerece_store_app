@@ -34,124 +34,119 @@ class DetailPageView extends GetView<DetailPageController> {
                       topLeft: Radius.circular(20.0)),
                   color: Colors.white,
                 ),
-                  child: Obx(
-                     () {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 300,
+                      ),
+                     const SizedBox(height: 10,),
+                      Row(
                         children: [
-                          Container(
-                            width: 300,
-                            child:Image.asset(controller.image.value),
+                          Text(
+                            'Colors',
+                            style: GoogleFonts.raleway(
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16),
                           ),
-                         const SizedBox(height: 10,),
-                          Row(
-                            children: [
-                              Text(
-                                'Colors',
-                                style: GoogleFonts.raleway(
-                                    color: AppColors.primary,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 5,),
-                          Obx(() {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                colors_container_details_view(
-                                  onTap: () {
-                                    controller.isSelected.value = 1;
-                                  },
-                                  name: 'Check Pink',
-                                  btnColor: AppColors.floatingBtnColor1,
-                                  borderColor: controller.isSelected.value == 1
-                                      ? AppColors.primaryLabelColor
-                                      : AppColors.borderColor,
-                                  textColor: controller.isSelected.value == 1
-                                      ? AppColors.primary
-                                      : AppColors.primaryLabelColor,
-                                ),
-                                colors_container_details_view(
-                                  onTap: () {
-                                    controller.isSelected.value = 2;
-                                  },
-                                  name: 'Check Pink',
-                                  btnColor: AppColors.floatingBtnColor2,
-                                  borderColor: controller.isSelected.value == 2
-                                      ? AppColors.primaryLabelColor
-                                      : AppColors.borderColor,
-                                  textColor: controller.isSelected.value == 2
-                                      ? AppColors.primary
-                                      : AppColors.primaryLabelColor,
-                                ),
-                                colors_container_details_view(
-                                  onTap: () {
-                                    controller.isSelected.value = 3;
-                                  },
-                                  name: 'Check Pink',
-                                  btnColor: AppColors.floatingBtnColor3,
-                                  borderColor: controller.isSelected.value == 3
-                                      ? AppColors.primaryLabelColor
-                                      : AppColors.borderColor,
-                                  textColor: controller.isSelected.value == 3
-                                      ? AppColors.primary
-                                      : AppColors.primaryLabelColor,
-                                ),
-                              ],
-                            );
-                          }),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Obx(() {
-                            return Row(
-                              children: [
-                                DetailRowTabs(
-                                  onTap: () {
-                                    controller.isSelectedReviews.value = 1;
-                                  },
-                                  title: 'Details',
-                                  lineHeight: 3,
-                                  lineWidth: 50,
-                                  textColor: controller.isSelectedReviews.value == 1
-                                      ? AppColors.secondary
-                                      : AppColors.primaryLabelColor,
-                                  lineColor: controller.isSelectedReviews.value == 1
-                                      ? AppColors.secondary
-                                      : Colors.white,
-                                ),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                DetailRowTabs(
-                                  onTap: () {
-                                    controller.isSelectedReviews.value = 2;
-                                  },
-                                  title: 'Reviews',
-                                  lineHeight: 3,
-                                  lineWidth: 60,
-                                  textColor: controller.isSelectedReviews.value == 2
-                                      ? AppColors.secondary
-                                      : AppColors.primaryLabelColor,
-                                  lineColor: controller.isSelectedReviews.value == 2
-                                      ? AppColors.secondary
-                                      : Colors.white,
-                                ),
-                              ],
-                            );
-                          }),
-                         const ProductDetailContainer(),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                        const  DetailBtnSizeBox()
                         ],
-                      );
-                    }
+                      ),
+                      const SizedBox(height: 5,),
+                      Obx(() {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            colors_container_details_view(
+                              onTap: () {
+                                controller.isSelected.value = 1;
+                              },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor1,
+                              borderColor: controller.isSelected.value == 1
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 1
+                                  ? AppColors.primary
+                                  : AppColors.primaryLabelColor,
+                            ),
+                            colors_container_details_view(
+                              onTap: () {
+                                controller.isSelected.value = 2;
+                              },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor2,
+                              borderColor: controller.isSelected.value == 2
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 2
+                                  ? AppColors.primary
+                                  : AppColors.primaryLabelColor,
+                            ),
+                            colors_container_details_view(
+                              onTap: () {
+                                controller.isSelected.value = 3;
+                              },
+                              name: 'Check Pink',
+                              btnColor: AppColors.floatingBtnColor3,
+                              borderColor: controller.isSelected.value == 3
+                                  ? AppColors.primaryLabelColor
+                                  : AppColors.borderColor,
+                              textColor: controller.isSelected.value == 3
+                                  ? AppColors.primary
+                                  : AppColors.primaryLabelColor,
+                            ),
+                          ],
+                        );
+                      }),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Obx(() {
+                        return Row(
+                          children: [
+                            DetailRowTabs(
+                              onTap: () {
+                                controller.isSelectedReviews.value = 1;
+                              },
+                              title: 'Details',
+                              lineHeight: 3,
+                              lineWidth: 50,
+                              textColor: controller.isSelectedReviews.value == 1
+                                  ? AppColors.secondary
+                                  : AppColors.primaryLabelColor,
+                              lineColor: controller.isSelectedReviews.value == 1
+                                  ? AppColors.secondary
+                                  : Colors.white,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            DetailRowTabs(
+                              onTap: () {
+                                controller.isSelectedReviews.value = 2;
+                              },
+                              title: 'Reviews',
+                              lineHeight: 3,
+                              lineWidth: 60,
+                              textColor: controller.isSelectedReviews.value == 2
+                                  ? AppColors.secondary
+                                  : AppColors.primaryLabelColor,
+                              lineColor: controller.isSelectedReviews.value == 2
+                                  ? AppColors.secondary
+                                  : Colors.white,
+                            ),
+                          ],
+                        );
+                      }),
+                     const ProductDetailContainer(),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                    const  DetailBtnSizeBox()
+                    ],
                   ),
                 ),
             ],
