@@ -12,7 +12,8 @@ class GridViewColumn1 extends GetView<HomePageController> {
   Widget build(BuildContext context) {
     return Container(
       height: 800,
-      child: GridView.builder(
+      child: GridView.builder
+        (
           itemCount: controller.images.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisSpacing: 10,

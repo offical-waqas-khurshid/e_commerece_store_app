@@ -14,9 +14,9 @@ class searchbar_action_of_appbar extends StatelessWidget {
       height: 0,
       child: TextField(
         decoration: InputDecoration(
-
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25.0),
+              borderSide: BorderSide(color: Colors.black, width: 5),
             ),
             filled: true,
             hintStyle:
