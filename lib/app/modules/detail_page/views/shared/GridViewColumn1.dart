@@ -28,12 +28,7 @@ class GridViewColumn1 extends GetView<HomePageController> {
               color: Colors.white,
               child: InkWell(
                 onTap: () {
-                  Get.toNamed(Routes.DETAIL_PAGE, parameters: {
-                    "image": controller.products[index].image.toString(),
-                    "title": controller.products[index].title.toString(),
-                    "subTitle": controller.products[index].subTitle.toString(),
-                    "price": controller.products[index].price.toString(),
-                  });
+                  Get.toNamed(Routes.DETAIL_PAGE, arguments:{"id":controller.products[index].id});
                 },
                 child: Card(
                   elevation: 5,

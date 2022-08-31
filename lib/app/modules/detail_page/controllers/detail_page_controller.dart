@@ -1,34 +1,24 @@
+import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
+import 'package:e_commerece_store_app/app/models/Products.dart';
 import 'package:get/get.dart';
 
 class DetailPageController extends GetxController {
-  //TODO: Implement DetailPageController
-
-  final count = 0.obs;
-  final image = "".obs;
-  final title = "".obs;
-  final subTitle = "".obs;
-  final price = "".obs;
   final isSelected = 1.obs;
   final isSelectedReviews = 1.obs;
+  int? id;
+  Products? product;
+  RxBool isLoading = true.obs;
   @override
   void onInit() {
     super.onInit();
-    Map<String,dynamic> data = Get.parameters;
-    image.value = data["image"];
-    title.value = data["title"];
-    subTitle.value = data["subTitle"];
-    price.value = data["price"];
+    Map<String,dynamic> data = Get.arguments;
+    if(data!=null) {
+      id = data["id"];
+    }
+    product = Get.find<HomePageController>().products.singleWhere((element) => element.id == id);
+
+    isLoading.value = false;
+
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
