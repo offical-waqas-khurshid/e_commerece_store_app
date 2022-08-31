@@ -14,7 +14,7 @@ class GridViewColumn1 extends GetView<HomePageController> {
       height: 800,
       child: GridView.builder
         (
-          itemCount: controller.images.length,
+          itemCount: controller.products.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
@@ -29,10 +29,10 @@ class GridViewColumn1 extends GetView<HomePageController> {
               child: InkWell(
                 onTap: () {
                   Get.toNamed(Routes.DETAIL_PAGE, parameters: {
-                    "image": controller.images[index],
-                    "title": controller.titles[index],
-                    "subTitle": controller.subTitles[index],
-                    "price": controller.price[index].toString(),
+                    "image": controller.products[index].image.toString(),
+                    "title": controller.products[index].title.toString(),
+                    "subTitle": controller.products[index].subTitle.toString(),
+                    "price": controller.products[index].price.toString(),
                   });
                 },
                 child: Card(
@@ -45,19 +45,19 @@ class GridViewColumn1 extends GetView<HomePageController> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image.asset(
-                          controller.images[index],
+                          controller.products[index].image.toString(),
                           height: 110,
                           width: 160,
                         ),
-                        Text(controller.titles[index],
+                        Text(controller.products[index].title.toString(),
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600, fontSize: 16)),
-                        Text(controller.subTitles[index],
+                        Text(controller.products[index].subTitle.toString(),
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                                 color: AppColors.primaryLabelColor)),
-                        Text('\$${controller.price[index]}',
+                        Text('\$${controller.products[index].price}',
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
