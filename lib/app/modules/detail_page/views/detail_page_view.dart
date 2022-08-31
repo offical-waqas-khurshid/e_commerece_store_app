@@ -18,6 +18,13 @@ class DetailPageView extends GetView<DetailPageController> {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
+      appBar: AppBar(
+          elevation: 0,
+        actions: [
+          paddingOnly(right: 10),
+          Image.asset('assets/images/icons.png', ),
+        ],
+      ),
       body: SafeArea(
         child: Obx(
            () {
@@ -29,8 +36,8 @@ class DetailPageView extends GetView<DetailPageController> {
                    children: [
                      StackDetailPage(image: controller.product?.image,onTap: (){},),
                      Container(
-                       padding: const EdgeInsets.all(20),
-                       height: 423,
+                       padding: const EdgeInsets.all(10),
+                       height: 390,
                        width: 390,
                        decoration: const BoxDecoration(
                          borderRadius: BorderRadius.only(

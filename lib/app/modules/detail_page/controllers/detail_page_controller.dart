@@ -16,7 +16,6 @@ class DetailPageController extends GetxController {
       id = data["id"];
     }
     product = Get.find<HomePageController>().products.singleWhere((element) => element.id == id);
-
     isLoading.value = false;
 
   }
