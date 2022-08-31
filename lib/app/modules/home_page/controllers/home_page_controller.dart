@@ -10,10 +10,13 @@ class HomePageController extends GetxController {
 
   List<Products> products = [
     Products(image: "assets/images/brown_bg_lg.png",title: "Mulberry Clutch", subTitle:"Series 7", price: 799.0,),
-    Products(image: "assets/images/brown_bg_lg.png",title: "Mulberry Clutch", subTitle:"Series 7", price: 799.0,),
-    Products(image: "assets/images/brown_bg_lg.png",title: "Mulberry Clutch", subTitle:"Series 7", price: 799.0,),
+    Products(image: "assets/images/golden_bag.png",title: "Gucci Black", subTitle:"Series 5", price: 100.0,),
+    Products(image: "assets/images/whit_bag.png",title: "Van Heusen", subTitle:"Series 2", price: 755.0,),
+    Products(image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
+    Products(image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
+    Products(image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
+    Products(image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
   ];
-
   // List<String> images = [
   //
   //   "assets/images/brown_bg_lg.png",
