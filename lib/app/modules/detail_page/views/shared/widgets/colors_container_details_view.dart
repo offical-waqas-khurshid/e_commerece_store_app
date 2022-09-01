@@ -27,11 +27,11 @@ class colors_container_details_view extends GetView<DetailPageController> {
                   SizedBox(
                     width: 15.0,
                     height: 20.0,
-                    child: FloatingActionButton(
-                      backgroundColor: btnColor,
-                      elevation: 0.0,
-                      onPressed: (){},
-                    ),
+                    // child: FloatingActionButton(
+                    //   backgroundColor: btnColor,
+                    //   elevation: 0.0,
+                    //   onPressed: (){},
+                    // ),
                   ),
                   const SizedBox(width: 10,),
                   Text('$name', style: TextStyle(color: textColor, fontSize: 12,fontWeight: FontWeight.w500 ),),

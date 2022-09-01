@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 
 import '../modules/detail_page/bindings/detail_page_binding.dart';
 import '../modules/detail_page/views/detail_page_view.dart';

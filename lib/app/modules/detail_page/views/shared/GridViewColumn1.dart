@@ -29,6 +29,7 @@ class GridViewColumn1 extends GetView<HomePageController> {
               child: InkWell(
                 onTap: () {
                   Get.toNamed(Routes.DETAIL_PAGE, arguments:{"id":controller.products[index].id});
+                  print(controller.products[index].id);
                 },
                 child: Card(
                   elevation: 5,

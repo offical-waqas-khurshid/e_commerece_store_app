@@ -16,31 +16,8 @@ class HomePageController extends GetxController {
     Products(id:5,image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
     Products(id:6,image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
     Products(id:7,image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
+    Products(id:8,image: "assets/images/brown_bg_lg.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),
   ];
-  // List<String> images = [
-  //
-  //   "assets/images/brown_bg_lg.png",
-  //   "assets/images/golden_bag.png",
-  //   "assets/images/whit_bag.png"
-  // ];
-  // List<String> titles = [
-  //   "Mulberry Clutch",
-  //   "Gucci Black",
-  //   "Van Heusen",
-  //   "Kate Spade",
-  // ];
-  // List<String> subTitles = [
-  //   "Series 7",
-  //   "Series 5",
-  //   "Series 2",
-  //   "Series 4",
-  // ];
-  // List<int> price = [
-  //   799,
-  //   100,
-  //   755,
-  //   499,
-  // ];
   @override
   void onInit() {
     super.onInit();

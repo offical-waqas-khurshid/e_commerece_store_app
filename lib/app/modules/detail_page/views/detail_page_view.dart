@@ -15,15 +15,22 @@ class DetailPageView extends GetView<DetailPageController> {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
-        actions: [
-          paddingOnly(right: 10),
-          Image.asset('assets/images/icons.png', ),
-        ],
+        backgroundColor: AppColors.secondary,
+        title: Stack(
+          children: <Widget>[
+            Container(
+              width: 500,
+              child: Image.asset('assets/images/icons.png', height: 50, width: 30, alignment: Alignment.centerRight),
+            ),
+
+          ],
+        ),
       ),
       body: SafeArea(
         child: Obx(
