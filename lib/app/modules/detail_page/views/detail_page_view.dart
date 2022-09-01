@@ -20,13 +20,15 @@ class DetailPageView extends GetView<DetailPageController> {
         const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
           elevation: 0,
         backgroundColor: AppColors.secondary,
-        title: Stack(
-          children: <Widget>[
-            Container(
-              width: 500,
-              child: Image.asset('assets/images/icons.png', height: 50, width: 30, alignment: Alignment.centerRight),
+        title: Row(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const <Widget>[
+            Text('Detail Page'),
+            SizedBox(
+              child: Icon(Icons.shopping_bag_outlined,color: Colors.white,),
             ),
 
           ],
