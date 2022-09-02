@@ -11,7 +11,6 @@ class StackDetailPage extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.only(top: 20),
           width: 450,
           child: Image.asset(image!, fit: BoxFit.fill,),
         ),

@@ -1,5 +1,7 @@
- import 'package:get/get.dart';
+import 'package:get/get.dart';
 
+import '../modules/add_to_card/bindings/add_to_card_binding.dart';
+import '../modules/add_to_card/views/add_to_card_view.dart';
 import '../modules/detail_page/bindings/detail_page_binding.dart';
 import '../modules/detail_page/views/detail_page_view.dart';
 import '../modules/home_page/bindings/home_page_binding.dart';
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.SPLASH_SCREEN,
       page: () => const SplashScreenView(),
       binding: SplashScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_TO_CARD,
+      page: () => const AddToCardView(),
+      binding: AddToCardBinding(),
     ),
   ];
 }
