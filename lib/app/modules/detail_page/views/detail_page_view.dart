@@ -249,7 +249,7 @@ class DetailPageView extends GetView<DetailPageController> {
                               const SizedBox(
                                 height: 5,
                               ),
-                              const DetailBtnSizeBox()
+                              DetailBtnSizeBox()
                             ],
                           ),
                         ),

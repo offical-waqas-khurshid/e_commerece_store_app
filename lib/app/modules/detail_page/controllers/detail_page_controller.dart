@@ -8,15 +8,21 @@ class DetailPageController extends GetxController {
   int? id;
   Products? product;
   RxBool isLoading = true.obs;
+
   @override
   void onInit() {
     super.onInit();
-    Map<String,dynamic> data = Get.arguments;
-    if(data!=null) {
+    Map<String, dynamic> data = Get.arguments;
+    if (data != null) {
       id = data["id"];
     }
-    product = Get.find<HomePageController>().products.singleWhere((element) => element.id == id);
+    product = Get.find<HomePageController>()
+        .products
+        .singleWhere((element) => element.id == id);
     isLoading.value = false;
+    ////////// Add to cart list find
+    product = Get.find<HomePageController>()
+        .products
+        .singleWhere((element) => element.id == id);
   }
-
 }

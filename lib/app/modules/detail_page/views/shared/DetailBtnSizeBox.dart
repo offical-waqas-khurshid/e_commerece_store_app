@@ -1,17 +1,22 @@
+import 'package:e_commerece_store_app/app/models/Products.dart';
+import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class DetailBtnSizeBox extends StatelessWidget {
-  const DetailBtnSizeBox({
-    Key? key,
-  }) : super(key: key);
+class DetailBtnSizeBox extends GetView<HomePageController>  {
+
+  int? id;
+  Products? product;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Center(
         child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+
+            },
             style: ElevatedButton.styleFrom(
                 elevation: 10,
                 primary: AppColors.secondary,
@@ -25,5 +30,5 @@ class DetailBtnSizeBox extends StatelessWidget {
             )),
       ),
     );
-  }
 }
+  }
