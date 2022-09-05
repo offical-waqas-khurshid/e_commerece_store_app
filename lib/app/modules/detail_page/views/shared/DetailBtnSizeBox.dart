@@ -4,10 +4,11 @@ import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DetailBtnSizeBox extends GetView<HomePageController>  {
+class DetailBtnSizeBox extends StatelessWidget  {
 
   int? id;
   Products? product;
+  DetailBtnSizeBox(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class DetailBtnSizeBox extends GetView<HomePageController>  {
       child: Center(
         child: ElevatedButton(
             onPressed: () {
-
+              Get.find<HomePageController>().addToCartList.add(product!);
             },
             style: ElevatedButton.styleFrom(
                 elevation: 10,

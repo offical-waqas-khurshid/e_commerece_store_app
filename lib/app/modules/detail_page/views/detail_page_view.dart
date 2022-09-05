@@ -1,6 +1,8 @@
+import 'package:badges/badges.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/DetailBtnSizeBox.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/ProductDetailContainer.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/StackDetailPage.dart';
+import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,16 +31,23 @@ class DetailPageView extends GetView<DetailPageController> {
           children: [
             const Text('Detail Page'),
             SizedBox(
-              child: InkWell(
-                onTap: () {
-                  Get.toNamed(
-                    Routes.ADD_TO_CARD,
+              child: Obx(
+                 () {
+                  return Badge(
+                    badgeContent: Text("${Get.find<HomePageController>().addToCartList.length}"),
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(
+                          Routes.ADD_TO_CARD,
+                        );
+                      },
+                      child: const Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Colors.white,
+                      ),
+                    ),
                   );
-                },
-                child: const Icon(
-                  Icons.shopping_bag_outlined,
-                  color: Colors.white,
-                ),
+                }
               ),
             ),
           ],
@@ -249,7 +258,7 @@ class DetailPageView extends GetView<DetailPageController> {
                               const SizedBox(
                                 height: 5,
                               ),
-                              DetailBtnSizeBox()
+                              DetailBtnSizeBox(controller.product)
                             ],
                           ),
                         ),
