@@ -230,6 +230,7 @@ class DetailPageView extends GetView<DetailPageController> {
                                               ? AppColors.secondary
                                               : Colors.white,
                                     ),
+
                                     const SizedBox(
                                       width: 20,
                                     ),

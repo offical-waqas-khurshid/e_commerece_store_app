@@ -1,4 +1,5 @@
 
+import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,7 +8,6 @@ import '../controllers/add_to_card_controller.dart';
 
 class AddToCardView extends GetView<AddToCardController> {
   const AddToCardView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,168 +37,174 @@ class AddToCardView extends GetView<AddToCardController> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 200,
-              width: 360,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 3,
-                    offset: const Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Card(
-                color: Colors.white70,
-                elevation: 20,
-                shadowColor: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Padding(padding: EdgeInsets.only(left: 5)),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Stack(
-                            children: [
-                              Container(
-                                height: 120,
-                                width: 110,
-                                child: Card(
-                                  color: Colors.white70,
-                                  elevation: 2,
-                                  child: Image.asset(
-                                    'assets/images/red.png',
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Text('size',
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500, fontSize: 14)),
-                        ],
+               ListView.builder(
+                itemCount: Get.find<HomePageController>().addToCartList.length,
+                itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 200,
+                  color: Colors.red,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
-                      // const Padding(padding: EdgeInsets.only(left: 1)),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Column(
+                    ],
+                  ),
+                  child:Card(
+                      color: Colors.white70,
+                      elevation: 20,
+                      shadowColor: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text('Title item',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500, fontSize: 14)),
-                            Text('subTitle item',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500, fontSize: 14)),
-                            Text('Price item',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Row(
+                            const Padding(padding: EdgeInsets.only(left: 5)),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text('Free Shipping',
-                                    style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 14,
-                                        color: AppColors.secondary)),
-                                Row(
+                                Stack(
                                   children: [
-                                    const Padding(
-                                        padding: EdgeInsets.only(left: 40)),
                                     Container(
-                                      width: 25.0,
-                                      child: FloatingActionButton(
-                                        elevation: 5,
-                                        backgroundColor: AppColors.secondary,
-                                        onPressed: () {},
-                                        child: const Icon(
-                                          Icons.remove,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    const Padding(
-                                        padding: EdgeInsets.only(left: 10)),
-                                    Text('1',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 14,
-                                            color: AppColors.primary)),
-                                    const Padding(
-                                        padding: EdgeInsets.only(right: 10)),
-                                    Container(
-                                      width: 25.0,
-                                      child: FloatingActionButton(
-                                        backgroundColor: AppColors.secondary,
-                                        onPressed: () {},
-                                        child: const Icon(
-                                          Icons.add,
-                                          color: Colors.white,
+                                      height: 120,
+                                      width: 110,
+                                      child: Card(
+                                        color: Colors.white70,
+                                        elevation: 2,
+                                        child: Image.asset(
+                                         Get.find<HomePageController>().addToCartList[index].image.toString(),
                                         ),
                                       ),
                                     ),
                                   ],
                                 ),
+                                Text('size',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w500, fontSize: 14)),
                               ],
                             ),
+                            // const Padding(padding: EdgeInsets.only(left: 1)),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: Row(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.white,
-                                        elevation: 5,
-                                        padding: const EdgeInsets.only(
-                                            top: 5,
-                                            bottom: 5,
-                                            left: 30,
-                                            right: 30),
-                                        side: const BorderSide(
-                                            width: 1.0,
-                                            style: BorderStyle.solid,
-                                            color: AppColors.primaryLabelColor),
-                                      ),
-                                      onPressed: () {},
-                                      child: Text('Edit',
+                                  Text(Get.find<HomePageController>().addToCartList[index].toString(),
+                                      style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w500, fontSize: 14)),
+                                  Text(Get.find<HomePageController>().addToCartList[index].toString(),
+                                      style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w500, fontSize: 14)),
+                                  Text(Get.find<HomePageController>().addToCartList[index].toString(),
+                                      style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w600, fontSize: 16)),
+                                  Row(
+                                    children: [
+                                      Text('Free Shipping',
                                           style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 16,
-                                              color: AppColors.primary))),
-                                  const SizedBox(
-                                    width: 10,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 14,
+                                              color: AppColors.secondary)),
+                                      Row(
+                                        children: [
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 40)),
+                                          Container(
+                                            width: 25.0,
+                                            child: FloatingActionButton(
+                                              elevation: 5,
+                                              backgroundColor: AppColors.secondary,
+                                              onPressed: () {},
+                                              child: const Icon(
+                                                Icons.remove,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 10)),
+                                          Text('1',
+                                              style: GoogleFonts.poppins(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 14,
+                                                  color: AppColors.primary)),
+                                          const Padding(
+                                              padding: EdgeInsets.only(right: 10)),
+                                          Container(
+                                            width: 25.0,
+                                            child: FloatingActionButton(
+                                              backgroundColor: AppColors.secondary,
+                                              onPressed: () {},
+                                              child: const Icon(
+                                                Icons.add,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                  ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.white,
-                                        elevation: 5,
-                                        side: const BorderSide(
-                                            width: 1.0,
-                                            style: BorderStyle.solid,
-                                            color: AppColors.primaryLabelColor),
-                                      ),
-                                      onPressed: () {},
-                                      child: Text('Remove',
-                                          style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 16,
-                                              color: AppColors.primary))),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 8.0),
+                                    child: Row(
+                                      children: [
+                                        ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.white,
+                                              elevation: 5,
+                                              padding: const EdgeInsets.only(
+                                                  top: 5,
+                                                  bottom: 5,
+                                                  left: 30,
+                                                  right: 30),
+                                              side: const BorderSide(
+                                                  width: 1.0,
+                                                  style: BorderStyle.solid,
+                                                  color: AppColors.primaryLabelColor),
+                                            ),
+                                            onPressed: () {},
+                                            child: Text('Edit',
+                                                style: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    color: AppColors.primary))),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.white,
+                                              elevation: 5,
+                                              side: const BorderSide(
+                                                  width: 1.0,
+                                                  style: BorderStyle.solid,
+                                                  color: AppColors.primaryLabelColor),
+                                            ),
+                                            onPressed: () {},
+                                            child: Text('Remove',
+                                                style: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    color: AppColors.primary))),
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                );
+                },
               ),
-            ),
             const SizedBox(
               height: 30,
             ),

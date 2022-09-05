@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^3.0.1
   badges: ^2.0.3
+  fluttertoast: ^8.0.9
 
 dev_dependencies:
   flutter_test:

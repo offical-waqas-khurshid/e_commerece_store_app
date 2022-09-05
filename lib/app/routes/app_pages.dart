@@ -34,7 +34,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADD_TO_CARD,
-      page: () => const AddToCardView(),
+      page: () =>  AddToCardView(),
       binding: AddToCardBinding(),
     ),
   ];

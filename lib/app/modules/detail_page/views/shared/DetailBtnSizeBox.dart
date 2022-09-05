@@ -17,10 +17,23 @@ class DetailBtnSizeBox extends StatelessWidget  {
         child: ElevatedButton(
             onPressed: () {
               Get.find<HomePageController>().addToCartList.add(product!);
+             // if(Get.find<HomePageController>().products[1] ==  Get.find<HomePageController>().addToCartList[1]){
+             //  Get.find<HomePageController>().addToCartList.add(product!);
+             // }else{
+             //   Fluttertoast.showToast(
+             //       msg: "This is Center Short Toast",
+             //       toastLength: Toast.LENGTH_SHORT,
+             //       gravity: ToastGravity.CENTER,
+             //       timeInSecForIosWeb: 1,
+             //       backgroundColor: Colors.red,
+             //       textColor: Colors.white,
+             //       fontSize: 16.0
+             //   );
+             // }
             },
             style: ElevatedButton.styleFrom(
                 elevation: 10,
-                primary: AppColors.secondary,
+                backgroundColor: AppColors.secondary,
                 padding: const EdgeInsets.only(
                     top: 15.0, bottom: 15.0, left: 50.0, right: 50.0),
                 shape: RoundedRectangleBorder(
