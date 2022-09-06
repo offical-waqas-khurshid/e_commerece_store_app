@@ -20,9 +20,5 @@ class DetailPageController extends GetxController {
         .products
         .singleWhere((element) => element.id == id);
     isLoading.value = false;
-    ////////// Add to cart list find
-    // product = Get.find<HomePageController>()
-    //     .products
-    //     .singleWhere((element) => element.id == id);
   }
 }

@@ -8,24 +8,11 @@ class AddToCardController extends GetxController {
   final count = 0.obs;
   int? id;
   Products? product;
-  List<Products> cartProducts = [];
+  RxList<Products> cartProducts = <Products>[].obs;
   @override
   void onInit() {
     super.onInit();
-    // Map<String, dynamic> cartData = Get.arguments;
-    // if (cartData != null) {
-    //   id = cartData['id'];
-    // }
     cartProducts = Get.find<HomePageController>().addToCartList;
-    // List<Widget> widgets = [];
-    // for (int i = 0;
-    //     i < Get.find<HomePageController>().addToCartList.length;
-    //     i++) {
-    //   widgets.add(Container());
-    // }
-    // product = Get.find<HomePageController>()
-    //     .addToCartList
-    //     .singleWhere((element) => element.id == id);
   }
 
   @override

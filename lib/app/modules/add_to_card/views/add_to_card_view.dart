@@ -1,3 +1,4 @@
+import 'package:e_commerece_store_app/app/modules/add_to_card/views/shared/PriceDetailCard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,8 +36,9 @@ class AddToCardView extends GetView<AddToCardController> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(children: controller.cartProducts.map<Widget>((element) => Container(
-              height: 200,
+            Column(children: controller.cartProducts.map<Widget>((element) =>
+                Container(
+              height: 190,
               width: 360,
               decoration: BoxDecoration(
                 boxShadow: [
@@ -50,7 +52,6 @@ class AddToCardView extends GetView<AddToCardController> {
               ),
               child:Card(
                 color: Colors.white70,
-                elevation: 20,
                 shadowColor: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 10.0),
@@ -62,39 +63,33 @@ class AddToCardView extends GetView<AddToCardController> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Stack(
-                            children: [
-                              Container(
-                                height: 120,
-                                width: 110,
-                                child: Card(
-                                  color: Colors.white70,
-                                  elevation: 2,
-                                  child: Image.asset(
-                                    element.image.toString(),
-                                  ),
-                                ),
+                          Container(
+                            height: 120,
+                            width: 110,
+                            child: Card(
+                              color: Colors.white70,
+                              child: Image.asset(
+                                element.image.toString(),
                               ),
-                            ],
+                            ),
                           ),
                           Text('size',
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w500, fontSize: 14)),
                         ],
                       ),
-                      // const Padding(padding: EdgeInsets.only(left: 1)),
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(controller.cartProducts.elementAt(1).toString(),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                            Text(element.title.toString(),
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w500, fontSize: 14)),
-                            Text(controller.cartProducts.elementAt(1).subTitle.toString(),
+                            Text(element.subTitle.toString(),
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w500, fontSize: 14)),
-                            Text('\$${controller.cartProducts.elementAt(1).price.toString()}',
+                            Text('\$${element.price.toString()}',
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 16)),
                             Row(
@@ -105,18 +100,20 @@ class AddToCardView extends GetView<AddToCardController> {
                                         fontSize: 14,
                                         color: AppColors.secondary)),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    const Padding(
-                                        padding: EdgeInsets.only(left: 40)),
-                                    Container(
-                                      width: 25.0,
-                                      child: FloatingActionButton(
-                                        elevation: 5,
-                                        backgroundColor: AppColors.secondary,
-                                        onPressed: () {},
-                                        child: const Icon(
-                                          Icons.remove,
-                                          color: Colors.white,
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 30.0),
+                                      child: Container(
+                                        width: 25.0,
+                                        child: FloatingActionButton(
+                                          elevation: 0,
+                                          backgroundColor: AppColors.secondary,
+                                          onPressed: () {},
+                                          child: const Icon(
+                                            Icons.remove,
+                                            color: Colors.white,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -132,6 +129,7 @@ class AddToCardView extends GetView<AddToCardController> {
                                     Container(
                                       width: 25.0,
                                       child: FloatingActionButton(
+                                        elevation: 0,
                                         backgroundColor: AppColors.secondary,
                                         onPressed: () {},
                                         child: const Icon(
@@ -144,14 +142,12 @@ class AddToCardView extends GetView<AddToCardController> {
                                 ),
                               ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: Row(
+                               Row(
                                 children: [
                                   ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.white,
-                                        elevation: 5,
+                                        elevation: 0,
                                         padding: const EdgeInsets.only(
                                             top: 5,
                                             bottom: 5,
@@ -174,13 +170,15 @@ class AddToCardView extends GetView<AddToCardController> {
                                   ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.white,
-                                        elevation: 5,
+                                        elevation: 0,
                                         side: const BorderSide(
                                             width: 1.0,
                                             style: BorderStyle.solid,
                                             color: AppColors.primaryLabelColor),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+
+                                      },
                                       child: Text('Remove',
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w500,
@@ -188,8 +186,8 @@ class AddToCardView extends GetView<AddToCardController> {
                                               color: AppColors.primary))),
                                 ],
                               ),
-                            ),
-                          ],
+                            // ),
+                            ]
                         ),
                       ),
                     ],
@@ -206,92 +204,7 @@ class AddToCardView extends GetView<AddToCardController> {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              height: 200,
-              width: 360,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 3,
-                    offset: const Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Card(
-                color: Colors.white70,
-                elevation: 20,
-                shadowColor: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Sub Total',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Text('\$786',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16, color: AppColors.secondary)),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Discount',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Text('\-\$786',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Estimated Tax',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Text('\$786',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Delivery',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Text('Free',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16,color: AppColors.secondary)),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Total Payable',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            Text('\$786',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                          ],
-                        ),
-                        //   ],
-                        // ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          const  PriceDetailCard(),
           ],
         ),
       ),
