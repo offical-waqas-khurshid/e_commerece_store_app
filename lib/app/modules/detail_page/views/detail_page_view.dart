@@ -135,6 +135,39 @@ class DetailPageView extends GetView<DetailPageController> {
                                   ],
                                 ),
                               ),
+                            const  Divider(color: AppColors.dividerColor,),
+                              Row(
+                                children: [
+                                  Text('Size', style: GoogleFonts.raleway(
+                                      color: AppColors.primary,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 16)),
+                                ],
+                              ),
+                              Row(
+                                children:  [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.black, width: 2.0, style: BorderStyle.solid),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 20,
+                                          width: 20,
+                                          child:  const Text('M'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                 Text('L'),
+                                Text('XL'),
+                                Text('S'),
+                                ],
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
