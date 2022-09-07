@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 class DetailPageController extends GetxController {
   final isSelected = 1.obs;
   final isSelectedReviews = 1.obs;
+  final isSelectedSize = 1.obs;
   int? id;
   Products? product;
   RxBool isLoading = true.obs;

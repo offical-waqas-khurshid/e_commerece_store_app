@@ -9,7 +9,7 @@ class HomePageController extends GetxController {
   final isSelected = 1.obs;
 
   List<Products> products = [
-    Products(id:1,image: "assets/images/black.png",title: "Mulberry Clutch", subTitle:"Series 7", price: 799.0,),
+    Products(id:1,image: "assets/images/black.png",title: "Mulberry Clutch", subTitle:"Series 7", price: 799.0, size: 'L', ),
     Products(id:2,image: "assets/images/blackGolden.png",title: "Gucci Black", subTitle:"Series 5", price: 100.0,),
     Products(id:3,image: "assets/images/custred.png",title: "Van Heusen", subTitle:"Series 2", price: 755.0,),
     Products(id:4,image: "assets/images/golden.png",title: "Kate Spade", subTitle:"Series 4", price: 499.0,),

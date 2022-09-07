@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/DetailBtnSizeBox.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/ProductDetailContainer.dart';
+import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/SizeContainer.dart';
 import 'package:e_commerece_store_app/app/modules/detail_page/views/shared/StackDetailPage.dart';
 import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
 import 'package:e_commerece_store_app/app/utils/appColors.dart';
@@ -144,29 +145,62 @@ class DetailPageView extends GetView<DetailPageController> {
                                       fontSize: 16)),
                                 ],
                               ),
-                              Row(
-                                children:  [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black, width: 2.0, style: BorderStyle.solid),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          height: 20,
-                                          width: 20,
-                                          child:  const Text('M'),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-
-                                 Text('L'),
-                                Text('XL'),
-                                Text('S'),
-                                ],
+                              Obx(
+                                () {
+                                  return Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children:  [
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 1;
+                                      },
+                                        titleOfSize:  '${controller.product?.size}',
+                                        backgroundColor: controller.isSelectedSize.value == 1 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 1 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 1 ? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 2;
+                                      },
+                                        titleOfSize: 'L',
+                                        backgroundColor: controller.isSelectedSize.value == 2 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 2 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 2 ? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 3;
+                                      },
+                                        titleOfSize: 'XL',
+                                        backgroundColor: controller.isSelectedSize.value == 3 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 3 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 3? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 4;
+                                      },
+                                        titleOfSize: 'S',
+                                        backgroundColor: controller.isSelectedSize.value == 4 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 4 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 4 ? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 5;
+                                      },
+                                        titleOfSize: 'XS',
+                                        backgroundColor: controller.isSelectedSize.value == 5 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 5 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 5 ? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                      SizeContainer(onTap: (){
+                                        controller.isSelectedSize.value = 6;
+                                      },
+                                        titleOfSize: '2XL',
+                                        backgroundColor: controller.isSelectedSize.value == 6 ? AppColors.sizeBorderColor: AppColors.textColor,
+                                        borderColor: controller.isSelectedSize.value == 6 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
+                                        textColor: controller.isSelectedSize.value == 6 ? AppColors.textColor: AppColors.primaryLabelColor,
+                                      ),
+                                    ],
+                                  );
+                                }
                               ),
                               const SizedBox(
                                 height: 10,
@@ -305,3 +339,5 @@ class DetailPageView extends GetView<DetailPageController> {
     );
   }
 }
+
+

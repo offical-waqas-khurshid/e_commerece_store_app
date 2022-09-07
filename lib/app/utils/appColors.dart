@@ -12,6 +12,8 @@ class AppColors{
   static const statusBarColor = Color(0xffdaccd9);
   static const btnColor = Color(0xffe17cda);
   static const dividerColor = Color(0xffd7d7d7);
+  static const textColor = Color(0xfff8f6f6);
+  static const sizeBorderColor = Color(0xfff5bca8);
 
   static const kFontColorPallets = [
     Color.fromRGBO(26, 31, 56, 1),

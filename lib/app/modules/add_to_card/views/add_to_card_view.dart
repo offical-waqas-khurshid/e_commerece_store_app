@@ -73,7 +73,7 @@ class AddToCardView extends GetView<AddToCardController> {
                               ),
                             ),
                           ),
-                          Text('size',
+                          Text('${element.size}',
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w500, fontSize: 14)),
                         ],
