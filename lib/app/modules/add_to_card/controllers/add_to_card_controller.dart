@@ -13,6 +13,12 @@ class AddToCardController extends GetxController {
   void onInit() {
     super.onInit();
     cartProducts = Get.find<HomePageController>().addToCartList;
+
+
+  }
+  deleteItem(){
+    Get.find<HomePageController>().addToCartList.contains(product);
+    Get.find<HomePageController>().addToCartList.removeWhere((element) => element.id == product?.id);
   }
 
   @override
