@@ -151,15 +151,17 @@ class DetailPageView extends GetView<DetailPageController> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children:  [
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 1;
+                                        //controller.isSelectedSize.value = 1;
+                                        controller.selectSize(1);
                                       },
-                                        titleOfSize:  '${controller.product?.size}',
+                                        titleOfSize:  "M",
                                         backgroundColor: controller.isSelectedSize.value == 1 ? AppColors.sizeBorderColor: AppColors.textColor,
                                         borderColor: controller.isSelectedSize.value == 1 ? AppColors.primaryIconColor: AppColors.primaryLabelColor,
                                         textColor: controller.isSelectedSize.value == 1 ? AppColors.textColor: AppColors.primaryLabelColor,
                                       ),
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 2;
+                                        // controller.isSelectedSize.value = 2;
+                                        controller.selectSize(2);
                                       },
                                         titleOfSize: 'L',
                                         backgroundColor: controller.isSelectedSize.value == 2 ? AppColors.sizeBorderColor: AppColors.textColor,
@@ -167,7 +169,8 @@ class DetailPageView extends GetView<DetailPageController> {
                                         textColor: controller.isSelectedSize.value == 2 ? AppColors.textColor: AppColors.primaryLabelColor,
                                       ),
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 3;
+                                        //controller.isSelectedSize.value = 3;
+                                        controller.selectSize(3);
                                       },
                                         titleOfSize: 'XL',
                                         backgroundColor: controller.isSelectedSize.value == 3 ? AppColors.sizeBorderColor: AppColors.textColor,
@@ -175,7 +178,8 @@ class DetailPageView extends GetView<DetailPageController> {
                                         textColor: controller.isSelectedSize.value == 3? AppColors.textColor: AppColors.primaryLabelColor,
                                       ),
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 4;
+                                        // controller.isSelectedSize.value = 4;
+                                        controller.selectSize(4);
                                       },
                                         titleOfSize: 'S',
                                         backgroundColor: controller.isSelectedSize.value == 4 ? AppColors.sizeBorderColor: AppColors.textColor,
@@ -183,7 +187,8 @@ class DetailPageView extends GetView<DetailPageController> {
                                         textColor: controller.isSelectedSize.value == 4 ? AppColors.textColor: AppColors.primaryLabelColor,
                                       ),
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 5;
+                                        // controller.isSelectedSize.value = 5;
+                                        controller.selectSize(5);
                                       },
                                         titleOfSize: 'XS',
                                         backgroundColor: controller.isSelectedSize.value == 5 ? AppColors.sizeBorderColor: AppColors.textColor,
@@ -191,7 +196,8 @@ class DetailPageView extends GetView<DetailPageController> {
                                         textColor: controller.isSelectedSize.value == 5 ? AppColors.textColor: AppColors.primaryLabelColor,
                                       ),
                                       SizeContainer(onTap: (){
-                                        controller.isSelectedSize.value = 6;
+                                        // controller.isSelectedSize.value = 6;
+                                        controller.selectSize(6);
                                       },
                                         titleOfSize: '2XL',
                                         backgroundColor: controller.isSelectedSize.value == 6 ? AppColors.sizeBorderColor: AppColors.textColor,
@@ -326,7 +332,9 @@ class DetailPageView extends GetView<DetailPageController> {
                               const SizedBox(
                                 height: 5,
                               ),
-                              DetailBtnSizeBox(controller.product)
+                              DetailBtnSizeBox(controller.product,(){
+                                controller.addToCart();
+                              })
                             ],
                           ),
                         ),

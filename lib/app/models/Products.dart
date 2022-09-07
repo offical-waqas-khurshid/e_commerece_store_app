@@ -4,7 +4,7 @@ class Products {
   String? title;
   String? subTitle;
   double? price;
-  String? size;
+  int? size;
 
   Products({this.id,this.image, this.title, this.subTitle, this.price, this.size});
 
