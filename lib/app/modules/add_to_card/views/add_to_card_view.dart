@@ -1,4 +1,5 @@
 import 'package:e_commerece_store_app/app/modules/add_to_card/views/shared/PriceDetailCard.dart';
+import 'package:e_commerece_store_app/app/modules/home_page/controllers/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -179,7 +180,7 @@ class AddToCardView extends GetView<AddToCardController> {
                                                 color: AppColors.primaryLabelColor),
                                           ),
                                           onPressed: () {
-                                           controller.deleteItem();
+                                           Get.find<HomePageController>().addToCartList.removeWhere((ele)=>ele.id==element.id);
                                            print(controller.id);
                                           },
                                           child: Text('Remove',

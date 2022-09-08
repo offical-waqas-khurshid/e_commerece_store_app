@@ -18,7 +18,7 @@ class AddToCardController extends GetxController {
   }
   deleteItem(){
     Get.find<HomePageController>().addToCartList.contains(product);
-    Get.find<HomePageController>().addToCartList.removeWhere((element) => element.id == product?.id);
+    // Get.find<HomePageController>().addToCartList.removeAt();
   }
 
   @override
